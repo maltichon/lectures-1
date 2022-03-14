@@ -12,6 +12,7 @@ Let's apply this technique to tweets by the four leading candidates in the 2016 
 ```{r}
 library(quanteda)
 tweets <- read.csv('candidate-tweets.csv', stringsAsFactors=F)
+head(tweets)
 ```
 
 We will use the positive and negative categories in the augmented General Inquirer dictionary to measure the extent to which these candidates adopted a positive or negative tone during the election campaign.
