@@ -69,6 +69,7 @@ head(simil, n=5)
 
 # and we can read their plots
 movie$plot[movie$name %in% names(simil)[2:5]]
+# barbie
 
 ```
 

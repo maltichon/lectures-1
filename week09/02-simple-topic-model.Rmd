@@ -17,6 +17,7 @@ library("pdftools")
 library("stm")
 library("tidyverse")
 library("zoo")
+library("wordcloud")
 ```
 
 In this notebook, we will study a topic model estimated on the PDF of Newton's Principia (1687) which we just downloaded. Reading the book into R with `pdftools` and creating a document frequency matrix with `quanteda`:
@@ -73,7 +74,7 @@ We can also access the key output matrices of the model as discussed in the lect
 
 ```{r}
 theta <- ctmodel$theta
-dim(theta)
+dim(theta) #vector of probability 
 
 beta <- exp(ctmodel$beta$logbeta[[1]])
 dim(beta)

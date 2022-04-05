@@ -10,6 +10,7 @@ In this notebook, we will write our own simplified versions of some commonly use
 Loading packages:
 
 ```{r}
+
 library("Rtsne")
 ```
 

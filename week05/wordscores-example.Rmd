@@ -12,7 +12,9 @@ The following code replicates the UK manifestos scaling example from LBG 2003.
 library(quanteda)
 library(quanteda.textmodels)
 # install.packages("devtools")
-# devtools::install_github("quanteda/quanteda.corpora")
+
+
+#devtools::install_github("quanteda/quanteda.corpora")
 
 data(data_corpus_ukmanifestos, package = "quanteda.corpora")
 # cleaning dataset
@@ -23,7 +25,7 @@ ukDfm <- dfm(ukCorpus)
 summary(ukCorpus)
 
 # fitting wordscores
-ws <- textmodel_wordscores(ukDfm, c(17.21, 5.35, 8.21, rep(NA, 3)))
+ws <- textmodel_wordscores(ukDfm, c(17.21, 5.35, 8.21, rep(NA, 3))) #first 3 are reference, last 3 are the virgins
 
 # checking a few individual wordscores
 coef(ws)[c("law-abiding", "schools", "unemployment", "social")]
@@ -79,7 +81,7 @@ test <- sample(1:nrow(cong), floor(.20 * nrow(cong)))
 refpoints <- cong$idealPoint
 refpoints[test] <- NA
 # running wordscores
-ws <- textmodel_wordscores(cdfm, refpoints, smooth=.5)
+ws <- textmodel_wordscores(cdfm, refpoints, smooth=.5) #tests' refpoints are NA and those are virgin texts
 # predicted values
 preds <- predict(ws, rescaling="lbg")
 # and let's compare
